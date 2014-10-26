@@ -14,6 +14,7 @@ void setup(){
 }
 
 void draw(){
+  background(255);
   for (textObject obj : textObjList){
     obj.update();
     obj.render();
@@ -51,7 +52,7 @@ class textObject {
     location = new PVector(width/2, height/2);
     velocity = new PVector(random(1,5), random(1,5));
     pressed = mKey;
-    render();
+    // render();
   }
   
   
@@ -66,12 +67,13 @@ class textObject {
     }
   }
   void render(){
-    fill(random(255));
-    textFont(wingdings, 24);
+    
     pushMatrix();
     translate(location.x, location.y);
+    fill(0);
+    textFont(wingdings, 24);
     text(pressed, 0 ,0);
-    text(pressed, location.x, location.y);
+    // text(pressed, location.x, location.y);
     popMatrix();
   }
   
